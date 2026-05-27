@@ -1,7 +1,7 @@
 import streamlit as st
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from groq import Groq
 import os
 from dotenv import load_dotenv
@@ -29,7 +29,8 @@ def load_vectorstore():
     chunks = splitter.split_text(text)
 
     embeddings = HuggingFaceEmbeddings()
-    return Chroma.from_texts(chunks, embeddings)
+    # CHANGED: Chroma → FAISS
+    return FAISS.from_texts(chunks, embeddings)
 
 
 # Initialize session state
