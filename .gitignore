@@ -1,0 +1,21 @@
+# Security - Never upload!
+.env
+.streamlit/secrets.toml
+
+# Excel files (large, not needed on cloud)
+*.xlsx
+*.xls
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Chroma database (rebuilds automatically)
+chroma_db/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
