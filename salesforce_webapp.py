@@ -99,7 +99,7 @@ if prompt := st.chat_input("Ask a question about Salesforce..."):
 
             # Get LLM response
             response = st.session_state.client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
+                model="openai/gpt-oss-120b",
                 messages=[
                     {
                         "role": "system",
